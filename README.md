@@ -5,8 +5,8 @@ This code helps you close applications when someone else (when you are not using
 
 Furthermore, you can combine this script with a telegram bot and activate it remotely. 
 
-![appCloser](./etc/pic1.png)
-![appCloser](./etc/pic2.png)
+![appCloser warning message](./etc/pic1.png)
+![appCloser password request](./etc/pic2.png)
  
  
 ## Install
@@ -27,7 +27,7 @@ You need the following dependencies:
 Clone the repo and install 3rd-party libraries.
 
 ```bash
-$ git clone 
+$ git clone https://github.com/Kianoush-h/AppCloser.git
 $ cd AppCloser
 $ pip3 install -r requirements.txt
 ```
@@ -38,22 +38,19 @@ $ pip3 install -r requirements.txt
 You can run the the code with this:
 
 ```
-python3 Desktop_Cleaner.py
+python3 AppCloser.py
 ```
-After you run the code, the code starts observing the path and each time something changes you will see a desktop notification on your screen which is something like this:
+After you run the code, the code starts observing the running apps and if it finds the restricted apps it goes as follows:
 
-![dektop](./etc/pic0.JPG)
+- Minimizes all the open windows
+- Terminates the restricted apps
+- Shows a warning message with windows message
+- Asks for a password
+- lock the screen
+- Sends the system to the sleep mode after 3 failed attemps 
 
-And when you add a file to your "Watch Path":
 
-![dektop](./etc/pic1.JPG)
 
-The 'Destination Path' will be something like this:
-
- 
-![dektop](./etc/pic2.JPG)
- 
-![dektop](./etc/pic3.JPG)
 
 
 ## CODE
