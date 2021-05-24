@@ -75,6 +75,9 @@ Message text:
 pyautogui.alert(f'You should not open these...\n\n{apps}',
                             'Made a mistake!!!','Close them NOW',0)     
 ```
+![appCloser warning message](./etc/pic1.png)
+
+
 
 Password: 
 
@@ -82,6 +85,9 @@ Password:
 Password = 'Kianoush'
 while pyautogui.password('Enter password') != Password:
 ```
+![appCloser password request](./etc/pic2.png)
+
+
 
 
 Minimizing all the opened windows:
