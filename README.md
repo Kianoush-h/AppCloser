@@ -51,8 +51,6 @@ After you run the code, the code starts observing the running apps and if it fin
 
 
 
-
-
 ## CODE
 
 Importing libraries 
@@ -102,10 +100,6 @@ os.system(f"TASKKILL /F /IM {app2}.exe")
 ```
 
 
-
-
- 
- 
  # Future 
  You can modify this project in a way that you can combine this script with a telegram bot and activate it remotely. 
 
