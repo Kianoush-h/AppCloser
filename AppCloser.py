@@ -19,6 +19,8 @@ import ctypes
 app1 = 'telegram'
 app2 = 'whatsapp'
 
+Password = 'Kianoush'
+
 def close_these():
     while 1:
         res = False         
@@ -35,20 +37,20 @@ def close_these():
             pyautogui.keyDown('winleft')
             pyautogui.press('d')
             pyautogui.keyUp('winleft')
-            os.system("TASKKILL /F /IM whatsapp.exe")
-            os.system("TASKKILL /F /IM telegram.exe")
+            os.system(f"TASKKILL /F /IM {app1}.exe")
+            os.system(f"TASKKILL /F /IM {app2}.exe")
             
             pyautogui.alert(f'You should not open these...\n\n{apps}',
                             'Made a mistake!!!','Close them NOW',0)            
-            while pyautogui.password('Enter password') != 'Kianoush':
+            while pyautogui.password('Enter password') != Password:
                 wrong_pass += 1
     
                 pyautogui.keyDown('winleft')
                 pyautogui.press('d')
                 pyautogui.keyUp('winleft')
     
-                os.system("TASKKILL /F /IM whatsapp.exe")
-                os.system("TASKKILL /F /IM telegram.exe")
+                os.system(f"TASKKILL /F /IM {app1}.exe")
+                os.system(f"TASKKILL /F /IM {app2}.exe")
                 ctypes.windll.user32.LockWorkStation()
                 
                 # if wrong_pass > 4:

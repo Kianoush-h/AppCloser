@@ -58,84 +58,48 @@ After you run the code, the code starts observing the running apps and if it fin
 Importing libraries 
  
  ```
+import os
+import pyautogui
 from time import sleep
-from watchdog.observers import Observer
-import shutil
-from datetime import date
-from pathlib import Path
-from watchdog.events import FileSystemEventHandler
-from ext import extension_paths
-from win10toast import ToastNotifier 
+import ctypes
  ```
  
- Desktop notification object
+Restricted apps:
  
  ```
-toaster = ToastNotifier() 
+app1 = 'telegram'
+app2 = 'whatsapp'
  ```
 
-### "Rename file" Function
-"Rename file" function renames file to reflect new path. If a file of the same name already exists in the destination folder, the file name is numbered and incremented until the filename is unique (prevents overwriting files).
+Message text:
 
 ```
-def rename_file(source: Path, destination_path: Path):
-    if Path(destination_path / source.name).exists():
-        increment = 0
+pyautogui.alert(f'You should not open these...\n\n{apps}',
+                            'Made a mistake!!!','Close them NOW',0)     
+```
 
-        while True:
-            increment += 1
-            new_name = destination_path / f'{source.stem}_{increment}{source.suffix}'
+Password: 
 
-            if not new_name.exists():
-                return new_name
-    else:
-        return destination_path / source.name
-
+```
+Password = 'Kianoush'
+while pyautogui.password('Enter password') != Password:
 ```
 
 
-### "Add date to path" Function
-this function adds current year/month to destination path. If the path doesn't already exist, it is created.
+Minimizing all the opened windows:
 
 ```
-def add_date_to_path(path: Path):
-    dated_path = path / f'{date.today().year}' / f'{date.today().month:02d}'
-    dated_path.mkdir(parents=True, exist_ok=True)
-    return dated_path
-
+pyautogui.keyDown('winleft')
+pyautogui.press('d')
+pyautogui.keyUp('winleft')
 ```
 
-
-### "Extension"
-This file is a switch case like function that determines the destination folder in the 'Destination Path':
+Clossing part:
 
 ```
-extension_paths = {
-        # audio
-        '.aif':    'media/audio',
-        '.cda':    'media/audio',
-        '.mid':    'media/audio',
-        '.midi':   'media/audio',
-        '.mp3':    'media/audio',
-        # text
-        '.txt':    'text/text_files',
-        '.doc':    'text/microsoft/word',
-        '.pdf':    'text/pdf',
-        # video
-        '.m4v':    'media/video',
-        '.mkv':    'media/video',
-        '.mov':    'media/video',
-        '.mp4':    'media/video',
-        '.mpg':    'media/video',
-        # images
-        '.gif':    'media/images',
-        '.JPG':    'media/images',
-        '.jpeg':   'media/images',
-
-....
-
+os.system(f"TASKKILL /F /IM {app1}.exe")
+os.system(f"TASKKILL /F /IM {app2}.exe")
 ```
-
 
 
 
