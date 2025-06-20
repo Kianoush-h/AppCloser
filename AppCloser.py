@@ -28,9 +28,9 @@ def close_these():
         apps = ''
         if (f'{app1}.exe' in output.lower()) or (f'{app2}.exe' in output.lower()):
             if f'{app1}.exe' in output.lower():
-                apps += f'{app1.uppe()} is open ...\n'
+                apps += f'{app1.upper()} is open ...\n'
             if f'{app2}.exe' in output.lower():
-                apps += f'{app2.uppe()} is open ...\n'
+                apps += f'{app2.upper()} is open ...\n'
                 
             print('fuck you...')
             wrong_pass = 0
