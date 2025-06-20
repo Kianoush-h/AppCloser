@@ -107,7 +107,7 @@ os.system(f"TASKKILL /F /IM {app2}.exe")
  
  
  # Future 
- You can modify this project to obseve any folder anywhere in your system. Also,  if you implement this project in your work place, you can get a notification via any social media to get an update regarding any change in your files.
+ You can modify this project in a way that you can combine this script with a telegram bot and activate it remotely. 
 
 
 
